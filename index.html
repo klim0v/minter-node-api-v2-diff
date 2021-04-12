@@ -27,10 +27,13 @@
         <hr>
         <ol id="new">
             <li><span class="GET">GET</span>/blocks <span>Blocks</span></li>
+            <li><span class="GET">GET</span>/commission_votes/{target_version} <span>CommissionVotes</span></li>
             <li><span class="GET">GET</span>/price_commissions <span>PriceCommission</span></li>
             <li><span class="GET">GET</span>/price_votes/{height} <span>PriceVotes</span></li>
             <li><span class="GET">GET</span>/swap_pool/{coin0}/{coin1} <span>SwapPool</span></li>
             <li><span class="GET">GET</span>/swap_pool/{coin0}/{coin1}/{provider} <span>SwapPoolProvider</span></li>
+            <li><span class="GET">GET</span>/update_votes/{target_version} <span>UpdateVotes</span></li>
+            <li><span class="GET">GET</span>/version_network <span>VersionNetwork</span></li>
         </ol>
     </div>
     <div><h2>What&#x27;s Deprecated<a id="btn_deprecated" class="showhide" href="#"
@@ -97,11 +100,47 @@
                      </li>-->
                 </ul>
             </li>
+            <li><span class="GET">GET</span>/candidate/{public_key} <span>Candidate</span>
+                <ul class="detail">
+                    <li><h3>Return Type</h3>
+                        <ul class="change response">
+                            <li>Add id<span class="comment"></span></li>
+                            <li>Add jailed_until<span class="comment"></span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
             <li><span class="GET">GET</span>/candidates <span>Candidates</span>
                 <ul class="detail">
                     <li><h3>Parameter</h3>
                         <ul class="change param">
                             <li>Change status<span class="comment"></span></li>
+                        </ul>
+                    </li>
+                    <li><h3>Return Type</h3>
+                        <ul class="change response">
+                            <li>Add candidates.id<span class="comment"></span></li>
+                            <li>Add candidates.jailed_until<span class="comment"></span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><span class="GET">GET</span>/coin_info/{symbol} <span>CoinInfo</span>
+                <ul class="detail">
+                    <li><h3>Return Type</h3>
+                        <ul class="change response">
+                            <li>Add mintable<span class="comment"></span></li>
+                            <li>Add burnable<span class="comment"></span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><span class="GET">GET</span>/coin_info_by_id/{id} <span>CoinInfoById</span>
+                <ul class="detail">
+                    <li><h3>Return Type</h3>
+                        <ul class="change response">
+                            <li>Add mintable<span class="comment"></span></li>
+                            <li>Add burnable<span class="comment"></span></li>
                         </ul>
                     </li>
                 </ul>
@@ -175,6 +214,7 @@
                     <li><h3>Return Type</h3>
                         <ul class="change response">
                             <li>Add initial_height<span class="comment"></span></li>
+                            <li>Add app_state.block_list_candidates<span class="comment"></span></li>
                             <li>Add app_state.pools<span class="comment"></span></li>
                             <li>Add app_state.commission<span class="comment"></span></li>
                             <li>Add app_state.commission_votes<span class="comment"></span></li>
@@ -241,6 +281,7 @@
                 <ul class="detail">
                     <li><h3>Return Type</h3>
                         <ul class="change response">
+                            <li>Add type_hex<span class="comment"></span></li>
                             <li>Add service_data<span class="comment"></span></li>
                         </ul>
                     </li>
@@ -250,6 +291,7 @@
                 <ul class="detail">
                     <li><h3>Return Type</h3>
                         <ul class="change response">
+                            <li>Add transactions.type_hex<span class="comment"></span></li>
                             <li>Add transactions.service_data<span class="comment"></span></li>
                         </ul>
                     </li>
